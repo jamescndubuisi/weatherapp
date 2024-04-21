@@ -1,3 +1,33 @@
+{% if error_exists %}
+    <h2> City with the name {{ city }} cannot be found </h2>
+    <h3> Please Try Another City</h3>
+    <p>For a list of valid cities, visit <a href="https://ontheworldmap.com/all/cities/"> City List </a></p>
+{#    {% elif weather_data %}#}
+{##}
+{#    <h1>{{ weather_data.city|title }}</h1>#}
+{#    <h2>{{ weather_data.temperature }}°C</h2>#}
+{#    <p>{{ weather_data.description }}</p>#}
+{#    <img src="http://openweathermap.org/img/w/{{ weather_data.icon }}.png" alt="{{ weather_data.description }}">#}
+{#    {% elif daily_forecasts %}#}
+{#    #}
+{#    <h2>12-Hour Forecast</h2>#}
+{#    <div class="forecast-container">#}
+{#        {% for forecast in daily_forecasts %}#}
+{#            <div class="forecast">#}
+{#                <h3>{{ forecast.day }}</h3>#}
+{#                <h3>{{ forecast.hour }}:{{ forecast.minutes }} {{ forecast.ampm|lower }}</h3>#}
+{#                <p>{{ forecast.min_temp }}°C - {{ forecast.max_temp }}°C</p>#}
+{#                <p>{{ forecast.description }}</p>#}
+{#                <img src="http://openweathermap.org/img/w/{{ forecast.icon }}.png" alt="{{ forecast.description }}">#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#    </div>#}
+{##}
+{##}
+{##}
+
+{% endif %}
+
 {% if weather_data %}
     <h1>{{ weather_data.city|title }}</h1>
     <h2>{{ weather_data.temperature }}°C</h2>
