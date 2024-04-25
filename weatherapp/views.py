@@ -1,6 +1,12 @@
 from django.shortcuts import render
 import requests
 import datetime
+import environ
+
+
+env = environ.Env()
+environ.Env.read_env()
+
 
 
 def fetch_weather_and_forecast(city, api_key, current_weather_url, forecast_url):
@@ -46,7 +52,7 @@ def fetch_weather_and_forecast(city, api_key, current_weather_url, forecast_url)
 
 def index(request):
     # api_key = '1ebfba407737f1180cd073f9fad8abf0'
-    api_key = "7c6aa4f298cb2c7cf6bf194393331ff2"
+    api_key = env("API_KEY")
     current_weather_url = 'https://api.openweathermap.org/data/2.5/weather?q={}&appid={}'
     forecast_url = 'https://api.openweathermap.org/data/2.5/forecast?lat={}&lon={}&appid={}&cnt={}&units={}'
     # forecast_url = 'https://api.openweathermap.org/data/2.5/forecast/daily?lat={}&lon={}&cnt={}&appid={}'
